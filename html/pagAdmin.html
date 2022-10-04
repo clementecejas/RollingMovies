@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/StyleMauri.css">
     <title>Página de administración</title>
 </head>
@@ -41,37 +42,21 @@
         </div>
     </nav>
 
+
     <div class="container">
-        <h1>Pagina de administración opción 1</h1>
-        <div class="row">
-            <div class="card" style="width: 18rem;">
-                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/avengers-secret-wars-1658996251.jpg?crop=1.00xw:0.465xh;0,0.142xh&resize=768:*"
-                    class="img-fluid rounded-start" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Código: </h5>
-                    <h5 class="card-text">Nombre: Avengers Secret Wars</h5>
-                    <p class="card-text">Categoría: </p>
-                    <p class="card-text">Descripción: </p>
-                    <p class="card-text"><small class="text-muted">Publicado:</small></p>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="https://pics.filmaffinity.com/Spider_Man_No_Way_Home-642739124-large.jpg"
-                    class="img-fluid rounded-start" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Código: </h5>
-                    <h5 class="card-text">Nombre: Spider Man: No way home </h5>
-                    <p class="card-text">Categoría: </p>
-                    <p class="card-text">Descripción: </p>
-                    <p class="card-text"><small class="text-muted">Publicado:</small></p>
-                </div>
+        <h1 class="m-5 text-center">Administrar Peliculas</h1>
+        <div class="d-md-flex justify-content-between">
+            <h3 class="my-4">Total de peliculas: 3</h3>
+            <div class="d-flex">
+                <h3 class="my-4">Categorias: </h3>
+                <select class="form-select mt-4 mx-4" aria-label="Default select example" style="width: 200px; height: 40px;">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
             </div>
         </div>
-    </div>
-
-
-    <div class="container">
-        <h1>Pagina de administración opción 2</h1>
         <table class="table">
             <thead>
                 <tr>
@@ -89,24 +74,48 @@
                     <td>Spiderman: Sin camino a casa</td>
                     <td class="display">Spiderman: Sin camino a casa</td>
                     <td>Acción</td>
-                    <td>Si</td>
-                    <td><button type="button" class="btn btn-warning">Ver</button></td>
+                    <td>
+                        <form action="">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        </form>
+                    </td>
+                    <td>
+                        <button type="button" class="btn"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn"><i class="bi bi-trash-fill"></i></button>
+                        <button type="button" class="btn"><i class="bi bi-star"></i></button>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
                     <td>Avengers secret wars</td>
                     <td class="display">Avengers secret wars</td>
                     <td>Ciencia ficción</td>
-                    <td>No</td>
-                    <td><button type="button" class="btn btn-warning">Ver</button></td>
+                    <td>
+                        <form action="">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        </form>
+                    </td>
+                    <td>
+                        <button type="button" class="btn"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn"><i class="bi bi-trash-fill"></i></button>
+                        <button type="button" class="btn"><i class="bi bi-star"></i></button>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
                     <td>Thor Love and thunder</td>
                     <td class="display">Thor Love and thunder</td>
                     <td>Fantasia</td>
-                    <td>Si</td>
-                    <td><button type="button" class="btn btn-warning">Ver</button></td>
+                    <td>
+                        <form action="">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        </form>
+                    </td>
+                    <td>
+                        <button type="button" class="btn"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn"><i class="bi bi-trash-fill"></i></button>
+                        <button type="button" class="btn"><i class="bi bi-star"></i></button>
+                    </td>
                 </tr>
             </tbody>
         </table>
