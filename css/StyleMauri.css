@@ -13,8 +13,35 @@ textarea{
     resize: none;
 }
 
+.img-movie{
+    background-position-y: bottom;
+}
+
+.bg-admin{
+    background: rgb(28,28,29);
+    background: linear-gradient(132deg, rgba(28,28,29,1) 33%, rgba(255,0,0,1) 100%);
+    padding: 50px;
+    color: #fff;
+    height: 100%;
+}
+
+.card-edit-movie{
+    background-color: #333333;
+}
+
+.btn-white{
+    color: white;
+}
+
+.form-edit-movie input,option,textarea{
+    color: #fff;
+}
+
 @media screen and (max-width:768px){
     .display{
         display: none;
+    }
+    .bg-admin{
+        padding: 50px 0;
     }
 }
