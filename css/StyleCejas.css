@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+.body-inicio {
+    font-family: 'Roboto', sans-serif;
+}
 
 .cuerpo {
     height: 500px;
