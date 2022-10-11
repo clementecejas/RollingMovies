@@ -51,6 +51,8 @@ const aceptarPelicula = () => {
     ponerPelicula()
 }
 
+// funcion para poner el form en blanco despues de enviar
+ 
 const resetForm = () => {
     // form.reset()
     nombreInput.value = "";
