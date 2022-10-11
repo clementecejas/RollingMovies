@@ -45,44 +45,22 @@
 
     <main class="pelicula-detalle bg-admin">
         <div class="container">
-            <h1 class="m-5 text-center">Editar pelicula: </h1>
+            <h1 class="m-5 text-center">Editar / Añadir pelicula: </h1>
             <div class="card card-edit-movie mb-3" style="max-width: 100%;">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner" style="height: 500px;">
-                                <div class="carousel-item active">
-                                    <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/spider-man-no-way-home-1661253004.jpg" class="d-block w-100 img-movie" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://pics.filmaffinity.com/Spider_Man_No_Way_Home-642739124-large.jpg" class="d-block w-100 img-movie" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://cineteatrolafalla.alvearmendoza.gob.ar/wp-content/uploads/2021/12/spider-man-no-way-home-poster-oficial.jpeg" class="d-block w-100 img-movie" alt="...">
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
+                        <img src="https://cineteatrolafalla.alvearmendoza.gob.ar/wp-content/uploads/2021/12/spider-man-no-way-home-poster-oficial.jpeg" class="d-block w-100 img-movie" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <form class="form-edit-movie">
+                            <form class="form-edit-movie" id="formEditAddMovie">
                                 <div class="mb-3">
-                                    <label for="" class="form-label">Nombre</label>
-                                    <input type="email" class="form-control">
+                                    <label for="" class="form-label">* Nombre</label>
+                                    <input type="text" class="form-control" id="nombrePelicula">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="" class="form-label">Categoría</label>
-                                    <select class="form-select">
+                                    <label for="" class="form-label">* Categoría</label>
+                                    <select class="form-select" id="categoriaPelicula">
                                         <option selected>Categoría</option>
                                         <option value="accion">Acción</option>
                                         <option value="ficcion">Ciencia Ficción</option>
@@ -92,14 +70,21 @@
                                     </select>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="formFile" class="form-label">Imagenes</label>
-                                    <input class="form-control" type="file" id="formFile">
+                                    <!-- <label for="formFile" class="form-label">Imagenes</label>
+                                    <input class="form-control" type="file" id="formFile"> -->
+
+                                    <label for="" class="form-label">* Imagen (Ingrese la URL que proporciona el servicio ...)</label>
+                                    <input type="text" class="form-control" id="imagenPelicula">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="" class="form-label">Descripción</label>
-                                    <textarea type="email" class="form-control"></textarea>
+                                    <label for="" class="form-label">* Descripción</label>
+                                    <textarea type="email" class="form-control" id="descripcionPelicula"></textarea>
                                 </div>
+                                <span class="error"></span>
                                 <button type="submit" class="btn btn-success">Guardar</button>
+                                <div class="mt-5">
+                                    <span class="text-muted">(*) Estos campos son requeridos</span>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -112,6 +97,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script src="/js/filtro-categorias.js"></script>
+    <script src="/js/validar-pelicula.js"></script>
 </body>
 
 </html>
