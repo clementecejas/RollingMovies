@@ -27,3 +27,16 @@ agregarFavoritos.addEventListener("click", (event) => {
 
 
 let favoritos = localStorage.getItem("favoritos") || [];
+favoritos = JSON.stringify(favoritos);
+
+let ul = document.createElement('ul');
+for(let x = 0; x < favoritos.length; x++){
+    let li = document.createElement("li");
+    var a = document.createElement("a");
+    a.href= favoritos[x].nombre;
+    a.textContent = favoritos[x].nombre;
+    li.appendChild(a);
+    ul.appendChild(li);
+}
+
+document.getElementById("favoritos").appendChild(ul);
