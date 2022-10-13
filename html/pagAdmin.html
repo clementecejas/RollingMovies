@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/css/StyleMauri.css">
+    <link rel="stylesheet" href="../css/StyleMauri.css">
     <title>Página de administración</title>
 </head>
 
@@ -46,15 +46,15 @@
     <main class="administrador bg-admin">
         <div class="container">
             <h1 class="m-5 text-center">Administrar Peliculas</h1>
+            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#form">Agregar
+                nuevo</button>
             <div class="d-md-flex justify-content-between">
-                <h3 class="my-4">Total de peliculas: 3</h3>
+                <div class="numero-peliculas"></div>
                 <div class="d-flex">
                     <form>
-                        <select 
-                        class="form-select mt-4" 
-                        aria-label="Default select example" 
-                        style="width: 200px; height: 40px;">
-                            <option selected>Categoría</option>
+                        <select class="form-select mt-4" aria-label="Default select example"
+                            style="width: 200px; height: 40px;">
+                            <option selected>Todas</option>
                             <option value="accion">Acción</option>
                             <option value="ficcion">Ciencia Ficción</option>
                             <option value="aventura">Aventura</option>
@@ -75,66 +75,72 @@
                         <th class="display" scope="col">Acciones</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row" id="idPelicula">1</th>
-                        <td id="nombrePelciula">Spiderman: Sin camino a casa</td>
-                        <td class="display" id="descripcionPelicula">Spiderman: Sin camino a casa</td>
-                        <td>Acción</td>
-                        <td>
-                            <form action="">
-                                <input type="checkbox" class="form-check-input" id="agregar-favoritos">
-                            </form>
-                        </td>
-                        <td>
-                            <button type="button" class="btn"><i class="bi bi-pencil-square btn-white"></i></button>
-                            <button type="button" class="btn"><i class="bi bi-trash-fill btn-white"></i></button>
-                            <button type="button" class="btn"><i class="bi bi-star btn-white"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" id="idPelicula">2</th>
-                        <td id="nombrePelciula">Avengers secret wars</td>
-                        <td class="display" id="descripcionPelicula">Avengers secret wars</td>
-                        <td>Ciencia ficción</td>
-                        <td>
-                            <form action="">
-                                <input type="checkbox" class="form-check-input" id="agregar-favoritos">
-                            </form>
-                        </td>
-                        <td>
-                            <button type="button" class="btn"><i class="bi bi-pencil-square btn-white"></i></button>
-                            <button type="button" class="btn"><i class="bi bi-trash-fill btn-white"></i></button>
-                            <button type="button" class="btn"><i class="bi bi-star btn-white"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" id="idPelicula">3</th>
-                        <td id="nombrePelciula">Thor Love and thunder</td>
-                        <td class="display" id="descripcionPelicula">Thor Love and thunder</td>
-                        <td>Fantasia</td>
-                        <td>
-                            <form action="">
-                                <input type="checkbox" class="form-check-input" id="agregar-favoritos">
-                            </form>
-                        </td>
-                        <td>
-                            <button type="button" class="btn"><i class="bi bi-pencil-square btn-white"></i></button>
-                            <button type="button" class="btn"><i class="bi bi-trash-fill btn-white"></i></button>
-                            <button type="button" class="btn"><i class="bi bi-star btn-white"></i></button>
-                        </td>
-                    </tr>
+                <tbody id="coleccion">
+
                 </tbody>
             </table>
-            <div id="favoritos"></div>
         </div>
     </main>
 
+    <!-- MODAL INICIO -->
+
+    <div class="modal fade" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editAddMovie">Nueva Pelicula</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">*Nombre</label>
+                            <input type="text" class="form-control" id="nombreInput">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">*Imagen (Colocar URL de la imagen desde Cloudinary)</label>
+                            <input type="text" class="form-control" id="imagenInput">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">*Trailer (Colocar URL del trailer de la pelicula)</label>
+                            <input type="text" class="form-control" id="trailerInput">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">*Descripcion</label>
+                            <textarea class="form-control" id="descripcionInput"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">*Categoria</label>
+                            <select class="form-select" aria-label="Default select example" id="categoriaInput">
+                            <option selected disabled>Categoría</option>
+                            <option value="Acción">Acción</option>
+                            <option value="Ciencia Ficción">Ciencia Ficción</option>
+                            <option value="aveAventurantura">Aventura</option>
+                            <option value="Comedia">Comedia</option>
+                            <option value="Romance">Romance</option>
+                        </select>
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="agregar">Agregar</button>
+                    </form>
+                </div>
+                <div id="msg"></div>
+                <div class="modal-footer d-flex flex-column">
+                    <span class="text-muted text-center">(*) Estos campos requeridos</span>
+                    <span class="text-muted text-center">(**) Las peliculas que se creén aparecerán como publicadas por defecto</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL FIN -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script src="/js/filtro-categorias.js"></script>
-    <script src="/js/favoritos.js"></script>
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    <script src="../js/pagAdmin.js"></script>
+    <script src="../js/favoritos.js "></script>
+
 </body>
 
 </html>
