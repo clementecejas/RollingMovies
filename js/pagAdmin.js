@@ -28,6 +28,7 @@ form.addEventListener("submit", (e) => {
 // crear funcion para validar el form
 
 let formValidation = () => {
+
     if (nombreInput.value === "" || descripcionInput.value === "" || categoriaInput.value === "" || imagenInput.value === "" || trailerInput.value === "") {
         msg.innerHTML = "Completar todos los campos";
         msg.style.display = "block";
@@ -47,7 +48,6 @@ let formValidation = () => {
         })()
     }
 }
-
 // Mostrar numero de peliculas
 
 const mostrarCantidadDePeliculas = () => {
@@ -108,6 +108,7 @@ const ponerPelicula = () => {
     resetForm();
 }
 
+
 ponerPelicula();
 
 //Cambiar estado si está publicado o no.
@@ -129,6 +130,7 @@ const borrarPelicula = (id) => {
     ponerPelicula();
 
     console.log(peliculaFiltrada)
+
     location.reload();
 }
 
@@ -147,4 +149,5 @@ const editarPelicula = (id) => {
     })
     peliculas = filter
     localStorage.setItem("peliculas", JSON.stringify(peliculas));
+
 }
