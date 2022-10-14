@@ -89,20 +89,20 @@ const ponerPelicula = () => {
     coleccion.innerHTML = "";
     peliculas.map((pelicula, idx) => {
         return coleccion.innerHTML += `
-        <tr>
-                        <th scope="row">${pelicula.id}</th>
-                        <td>${pelicula.nombre}</td>
-                        <td class="display">${pelicula.descripcion}</td>
-                        <td>${pelicula.categoria}</td>
-                        <td>
-                            <input type="checkbox" ${pelicula.publicado ? "checked" : ""} class="form-check-input" id="publicadoInput" onclick="publicadoONo(${pelicula.id})">
-                        </td>
-                        <td>
-                            <button type="button" class="btn"><i onclick="editarPelicula(${pelicula.id})" data-bs-toggle="modal" data-bs-target="#form" class="bi bi-pencil-square btn-white"></i></button>
-                            <button type="button" class="btn"><i onclick="borrarPelicula(${pelicula.id})" class="bi bi-trash-fill btn-white"></i></button>
-                            <button type="button" class="btn"><i onclick="marcarFavorito(${pelicula.id})" class="bi ${pelicula.favorito ? "bi-star-fill" : "bi-star"} btn-white"></i></button>
-                        </td>
-                    </tr>
+            <tr>
+                <th scope="row">${pelicula.id}</th>
+                <td>${pelicula.nombre}</td>
+                <td class="display">${pelicula.descripcion}</td>
+                <td>${pelicula.categoria}</td>
+                <td>
+                    <input type="checkbox" ${pelicula.publicado ? "checked" : ""} class="form-check-input" id="publicadoInput" onclick="publicadoONo(${pelicula.id})">
+                </td>
+                <td>
+                    <button type="button" class="btn"><i onclick="editarPelicula(${pelicula.id})" data-bs-toggle="modal" data-bs-target="#form" class="bi bi-pencil-square btn-white"></i></button>
+                    <button type="button" class="btn"><i onclick="borrarPelicula(${pelicula.id})" class="bi bi-trash-fill btn-white"></i></button>
+                    <button type="button" class="btn"><i onclick="marcarFavorito(${pelicula.id})" class="bi ${pelicula.favorito ? "bi-star-fill" : "bi-star"} btn-white"></i></button>
+                </td>
+            </tr>
         `
     })
     resetForm();
