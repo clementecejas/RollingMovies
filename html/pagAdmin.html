@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/StyleMauri.css">
+    <title>Página de administración</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="administrador bg-admin">
+        <div class="container">
+            <h1 class="m-5 text-center">Administrar Peliculas</h1>
+            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#form">Agregar
+                nuevo</button>
+            <div class="d-md-flex justify-content-between">
+                <div class="numero-peliculas"></div>
+                <div class="d-flex">
+                    <form>
+                        <select class="form-select mt-4" aria-label="Default select example"
+                            style="width: 200px; height: 40px;">
+                            <option selected>Todas</option>
+                            <option value="accion">Acción</option>
+                            <option value="ficcion">Ciencia Ficción</option>
+                            <option value="aventura">Aventura</option>
+                            <option value="comedia">Comedia</option>
+                            <option value="romance">Romance</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+            <table class="table table-dark table-striped mt-5">
+                <thead>
+                    <tr>
+                        <th class="display" scope="col">Código</th>
+                        <th class="display" scope="col">Nombre</th>
+                        <th class="display" scope="col">Descripcion</th>
+                        <th class="display" scope="col">Categoría</th>
+                        <th class="display" scope="col">Publicado</th>
+                        <th class="display" scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="coleccion">
+
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- MODAL INICIO -->
+
+    <div class="modal fade" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editAddMovie">Nueva Pelicula</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">*Nombre</label>
+                            <input type="text" class="form-control" id="nombreInput">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">*Imagen (Colocar URL de la imagen desde Cloudinary)</label>
+                            <input type="text" class="form-control" id="imagenInput">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">*Trailer (Colocar URL del trailer de la pelicula)</label>
+                            <input type="text" class="form-control" id="trailerInput">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">*Descripcion</label>
+                            <textarea class="form-control" id="descripcionInput"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">*Categoria</label>
+                            <select class="form-select" aria-label="Default select example" id="categoriaInput">
+                            <option selected disabled>Categoría</option>
+                            <option value="Acción">Acción</option>
+                            <option value="Ciencia Ficción">Ciencia Ficción</option>
+                            <option value="aveAventurantura">Aventura</option>
+                            <option value="Comedia">Comedia</option>
+                            <option value="Romance">Romance</option>
+                        </select>
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="agregar">Agregar</button>
+                    </form>
+                </div>
+                <div id="msg"></div>
+                <div class="modal-footer d-flex flex-column">
+                    <span class="text-muted text-center">(*) Estos campos requeridos</span>
+                    <span class="text-muted text-center">(**) Las peliculas que se creén aparecerán como publicadas por defecto</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL FIN -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    <script src="../js/pagAdmin.js"></script>
+    <script src="../js/favoritos.js "></script>
+
+</body>
+
+</html>
