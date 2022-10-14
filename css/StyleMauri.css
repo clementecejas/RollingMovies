@@ -33,7 +33,6 @@ textarea{
     color: white;
 }
 
-
 @media screen and (max-width:768px){
     .display{
         display: none;
