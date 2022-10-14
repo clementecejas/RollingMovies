@@ -22,7 +22,7 @@ textarea{
     background: linear-gradient(132deg, rgba(28,28,29,1) 33%, rgba(255,0,0,1) 100%);
     padding: 50px;
     color: #fff;
-    height: 100%;
+    min-height: 100vh;
 }
 
 .card-edit-movie{
@@ -31,10 +31,6 @@ textarea{
 
 .btn-white{
     color: white;
-}
-
-.form-edit-movie input,option,textarea{
-    color: #fff;
 }
 
 @media screen and (max-width:768px){
