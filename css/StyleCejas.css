@@ -3,6 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+.body-contacto {
+    font-family: 'Roboto', sans-serif;
+    background-image: url(https://res.cloudinary.com/dryiawgds/image/upload/v1665633473/fondoPelisc_cseeco.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+
 
 .body-login {
     font-family: 'Roboto', sans-serif;
@@ -13,6 +20,7 @@
 }
 
 
+/* INICIO CONTACTO */
 
 
 /* INICIO LOGIN */
@@ -26,45 +34,44 @@
     border-radius: 20px;
 }
 
-.formulario-login {
+.form-contact {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
-.formulario-login input {
+.form-contact input {
     font-size: 1.5rem;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-.formulario-login h2 {
+.form-contact h2 {
     margin: 35px 0px;
     color: white;
 }
 
-.formulario-login p a {
-    text-decoration: none;
-}
-
-.formulario-login button {
-    margin-bottom: 15px;
+.form-contact button {
     font-size: 22px;
     border-radius: 20px;
+    margin-top: 25px;
 }
 
 .form-floating {
     width: 100%;
 }
 
-/* MEDIA QUERY LOGIN */
+.form-floating textarea {
+    resize: none;
+    margin-bottom: 30px;
+}
+
+
 @media (max-width:500px) {
-    .container-form-login {
+    .container-form-contact {
         width: 95%;
     }
 }
 
-/* MEDIA QUERY LOGIN */
-/* FIN LOGIN */
+/* FIN CONTACTO */
