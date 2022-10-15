@@ -193,7 +193,10 @@ header nav a.activo {
 
 .peliculas-recomendadas .contenedor-carousel .carousel .pelicula img {
 	width: 100%;
-	vertical-align: top;
+    vertical-align: top;
+    height: 200px;
+    object-fit: cover;
+	
 }
 
 /* ---- ----- ----- Media Queries ----- ----- ----- */
