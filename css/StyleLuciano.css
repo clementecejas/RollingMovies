@@ -1,3 +1,11 @@
+.body-registro {
+    font-family: 'Roboto', sans-serif;
+    background-image: url(https://res.cloudinary.com/dryiawgds/image/upload/v1665633473/fondoPelisc_cseeco.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
 .container-form-registro {
     width: 400px;
     height: 500px;
