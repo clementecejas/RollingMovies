@@ -5,10 +5,12 @@ let peliculaPrincipal = document.getElementById("pelicula-principal");
 
 let arrayDePeliculas = JSON.parse(localStorage.getItem("peliculas")) || [];
 
+//Traer todas las peliculas que estén publicadas - publicada === true
 const peliculaPublicada = arrayDePeliculas.filter((pelicula) => {
     return pelicula.publicado;
 });
 
+//Traer la primera pelicula destacada y mostrarla
 const primeraDestacada = () => {
     const peliculasFiltrada = peliculaPublicada.filter((pelicula) => {
         return pelicula.favorito;
@@ -27,6 +29,7 @@ const primeraDestacada = () => {
 }
 primeraDestacada();
 
+//Traer todas las peliculas destacadas y mostrarlas
 const mostrarTodasLasDestacadas = () => {
     const peliculasFiltradas = peliculaPublicada.filter((pelicula) => {
         return pelicula.favorito;
@@ -41,3 +44,6 @@ const mostrarTodasLasDestacadas = () => {
     });
 }
 mostrarTodasLasDestacadas();
+
+
+//Mostrar segun las categorias
