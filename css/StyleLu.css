@@ -89,6 +89,7 @@ header nav a.activo {
 	cursor: pointer;
 	transition: .3s ease all;
 	font-size: 1.12em;
+	text-decoration: none;
 }
 
 .pelicula-principal .boton:hover {

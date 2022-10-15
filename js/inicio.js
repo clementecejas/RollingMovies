@@ -5,8 +5,12 @@ let peliculaPrincipal = document.getElementById("pelicula-principal");
 
 let arrayDePeliculas = JSON.parse(localStorage.getItem("peliculas")) || [];
 
+const peliculaPublicada = arrayDePeliculas.filter((pelicula) => {
+    return pelicula.publicado;
+});
+
 const primeraDestacada = () => {
-    const peliculasFiltrada = arrayDePeliculas.filter((pelicula) => {
+    const peliculasFiltrada = peliculaPublicada.filter((pelicula) => {
         return pelicula.favorito;
     });
     const primeraPeliculaFiltrada = peliculasFiltrada[0];
@@ -16,7 +20,7 @@ const primeraDestacada = () => {
     <p class="descripcion">
         ${primeraPeliculaFiltrada.descripcion}
     </p>
-    <button role="button" class="boton"><i class="fas fa-play"></i>Reproducir</button>
+    <a class="boton" href="${primeraPeliculaFiltrada.trailer}" target="_blank"><i class="fas fa-play"></i>Reproducir</a>
     <button role="button" class="boton"><i class="fas fa-info-circle"></i>Más información</button>
     `
     peliculaPrincipal.style.backgroundImage = `url(${primeraPeliculaFiltrada.imagen})`;
@@ -24,7 +28,7 @@ const primeraDestacada = () => {
 primeraDestacada();
 
 const mostrarTodasLasDestacadas = () => {
-    const peliculasFiltradas = arrayDePeliculas.filter((pelicula) => {
+    const peliculasFiltradas = peliculaPublicada.filter((pelicula) => {
         return pelicula.favorito;
     });
 
