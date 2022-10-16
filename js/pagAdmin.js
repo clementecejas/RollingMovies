@@ -69,9 +69,15 @@ const aceptarPelicula = () => {
         publicado: true,
         favorito: false
     })
-    localStorage.setItem('peliculas', JSON.stringify(peliculas))
+    localStorage.setItem('peliculas', JSON.stringify(peliculas));
     ponerPelicula();
-    location.reload();
+    Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Pelicula CREADA con éxito",
+        showConfirmButton: true,
+        timer: 1500,
+    });
 }
 
 // funcion para poner el form en blanco despues de enviar
@@ -129,9 +135,13 @@ const borrarPelicula = (id) => {
     localStorage.setItem('peliculas', JSON.stringify(peliculas));
     ponerPelicula();
 
-    console.log(peliculaFiltrada)
-
-    location.reload();
+    Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Pelicula BORRADA con éxito",
+        showConfirmButton: true,
+        timer: 1500,
+    });
 }
 
 const editarPelicula = (id) => {
@@ -150,4 +160,11 @@ const editarPelicula = (id) => {
     peliculas = filter
     localStorage.setItem("peliculas", JSON.stringify(peliculas));
 
+    Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Pelicula EDITADA con éxito",
+        showConfirmButton: true,
+        timer: 1500,
+    });
 }
