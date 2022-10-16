@@ -48,7 +48,7 @@ mostrarTodasLasDestacadas();
 
 //Mostrar segun las categorias
 
-let categorias = ["Acción", "Aventura", "Comedia", "Ciencia Ficción", "Romance", "Comedia", "Series", ""]
+let categorias = ["Acción", "Aventura", "Comedia", "Ciencia Ficción", "Romance", "Comedia", "Series", "Terror"]
 
 categorias.map((categoria) => {
     return categoria;

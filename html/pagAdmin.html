@@ -111,10 +111,6 @@
                             <input type="text" class="form-control" id="trailerInput">
                         </div>
                         <div class="mb-3">
-                            <label for="message-text" class="col-form-label">*Descripcion</label>
-                            <textarea class="form-control" id="descripcionInput"></textarea>
-                        </div>
-                        <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">*Categoria</label>
                             <select class="form-select" aria-label="Default select example" id="categoriaInput">
                             <option selected disabled>Categoría</option>
@@ -123,7 +119,14 @@
                             <option value="Aventura">Aventura</option>
                             <option value="Comedia">Comedia</option>
                             <option value="Romance">Romance</option>
+                            <option value="Comedia">Comedia</option>
+                            <option value="Terror">Terror</option>
+                            <option value="Series">Series</option>
                         </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">*Descripcion</label>
+                            <textarea class="form-control" id="descripcionInput"></textarea>
                         </div>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary" id="agregar">Agregar</button>

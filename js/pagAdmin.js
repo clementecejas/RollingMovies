@@ -98,7 +98,7 @@ const ponerPelicula = () => {
             <tr>
                 <th scope="row">${pelicula.id}</th>
                 <td>${pelicula.nombre}</td>
-                <td class="display">${pelicula.descripcion}</td>
+                <td class="display desc">${pelicula.descripcion}</td>
                 <td>${pelicula.categoria}</td>
                 <td>
                     <input type="checkbox" ${pelicula.publicado ? "checked" : ""} class="form-check-input" id="publicadoInput" onclick="publicadoONo(${pelicula.id})">
