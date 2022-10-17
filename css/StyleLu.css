@@ -236,6 +236,85 @@ header nav a.activo {
 		display: none;
 	}
 
+}
+.cartelera{
+    font-size: 30px;
+	color: #AAA;
+    background-color: red;
+    width: 1350px;
+    height: 20px;
+    padding: 50px;
+    margin-top: 270px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.peli1{
+    background: none;
+    width: 210px;
+    height: 290px;
+    padding: 0px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    margin-left: 110px;
+    margin-right: 0px;
+}
+.peli2{
+    background: none;
+    width: 210px;
+    height: 290px;
+    padding: 0px;
+    margin-top: -290px;
+    margin-bottom: 0px;
+    margin-left: 340px;
+    margin-right: 0px;
+}
+.peli3{
+    background: none;
+    width: 210px;
+    height: 290px;
+    padding: 0px;
+    margin-top: -290px;
+    margin-bottom: 0px;
+    margin-left: 570px;
+    margin-right: 0px;
+
+}
+.peli4{
+    background: none;
+    width: 210px;
+    height: 290px;
+    padding: 0px;
+    margin-top: -290px;
+    margin-bottom: 0px;
+    margin-left: 800px;
+    margin-right: 0px;
+
+}
+.peli5{
+    background: none;
+    width: 210px;
+    height: 290px;
+    padding: 0px;
+    margin-top: -290px;
+    margin-bottom: 0px;
+    margin-left: 1030px;
+    margin-right: 0px;
+
+}
+.peli6{
+    background: none;
+    width: 210px;
+    height: 290px;
+    padding: 0px;
+    margin-top: -290px;
+    margin-bottom: 0px;
+    margin-left: 110px;
+    margin-right: 0px;
+
+}
+
+
 	.peliculas-recomendadas .contenedor-carousel .carousel .pelicula img {
 		height: 200px;
 	}
