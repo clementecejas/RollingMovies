@@ -29,6 +29,11 @@ textarea{
     background-color: #333333;
 }
 
+.desc{
+    max-width: 500px;
+    word-break: break-all;
+}
+
 .btn-white{
     color: white;
 }
