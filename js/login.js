@@ -46,13 +46,3 @@ formLogin.addEventListener("submit", (e) => {
     timer: 1500,
   });
 });
-
-const logout = () => {
-  let usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
-  console.log(usuarioLogueado);
-  usuarioLogueado.isLogged = false;
-  localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado))
-  if (usuarioLogueado !== undefined) {
-    localStorage.removeItem("usuarioLogueado")
-  }
-}
