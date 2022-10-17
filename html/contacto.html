@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/StyleCejas.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/cf8f5c0c19.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,400;1,100&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("ON5gEgOHw1k8YGSKj");
+        })();
+    </script>
     <title>Document</title>
 </head>
-<body>
+
+<body class="body-contacto">
     
+    <!-- INICIO NAVBAR -->
+    <div class="navbarDinamica">
+
+    </div>
+    <!-- FIN NAVBAR -->
+
+
+    <!-- INICIO CONTACTO -->
+    <div class="container-form-contact bg-dark">
+        <form id="contact" class="form-contact">
+            <h2>Contacto</h2>
+            <div class="form-floating">
+                <input type="text" class="form-control" id="name-contact" name="name" placeholder="Nombre" minlength="6"
+                    maxlength="15" />
+                <label for="floatingInput">Nombre</label>
+            </div>
+            <div class="form-floating">
+                <input type="email" class="form-control" id="email-contact" name="email" placeholder="Email"
+                    minlength="12" maxlength="35" />
+                <label for="floatingInput mb-3">Email</label>
+            </div>
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Comentario" name="comentario" id="textarea-contact"
+                    minlength="6" maxlength="150"></textarea>
+                <label for="floatingTextarea">Comentario</label>
+            </div>
+            <span class="error-contact"></span>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+    <!-- FIN CONTACTO -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="../js/contacto.js"></script>
+    <script src="../js/navbar.js"></script>
+
 </body>
+
 </html>
