@@ -48,37 +48,170 @@ mostrarTodasLasDestacadas();
 
 //Mostrar segun las categorias
 
+let peliculasDeAccionId = document.getElementById('peliculasDeAcción');
+
 const MostrarPeliculasDeAccion = () => {
     const peliculasDeAccion = peliculaPublicada.filter((pelicula) => {
         return pelicula.categoria === "Acción"
     });
     peliculasDeAccion.map((pelicula) => {
-        console.log(pelicula);
+        peliculasDeAccionId.innerHTML += `
+        <div class="col-4 col-md-2">
+            <img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}">
+        </div>
+        `
     })
 }
 MostrarPeliculasDeAccion();
 
+let peliculasDeMarvelId = document.getElementById('peliculasDeMarvel');
 
-const MostrarPeliculasDeCSFiccion = () => {
-    const peliculasDeAccion = peliculaPublicada.filter((pelicula) => {
-        return pelicula.categoria === "Ciencia Ficción"
+const MostrarPeliculasDeMarvel = () => {
+    const peliculasDeMarvel = peliculaPublicada.filter((pelicula) => {
+        return pelicula.categoria === "Marvel"
     });
-    peliculasDeAccion.map((pelicula) => {
-        console.log(pelicula)
+    peliculasDeMarvel.map((pelicula) => {
+        peliculasDeMarvelId.innerHTML += `
+        <div class="col-4 col-md-2">
+            <img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}">
+        </div>
+        `
     })
 }
-MostrarPeliculasDeCSFiccion();
+MostrarPeliculasDeMarvel();
 
+let seriesId = document.getElementById('series');
 
 const MostrarSeries = () => {
-    const peliculasDeAccion = peliculaPublicada.filter((pelicula) => {
-        return pelicula.categoria === "Series"
+    const series = peliculaPublicada.filter((serie) => {
+        return serie.categoria === "Series"
     });
-    peliculasDeAccion.map((pelicula) => {
-        console.log(pelicula)
+    series.map((serie) => {
+        seriesId.innerHTML += `
+        <div class="col-4 col-md-2">
+            <img class="img-categorias my-3" src="${serie.imagen}" alt="${serie.nombre}">
+        </div>
+        `
     })
 }
 MostrarSeries();
+
+let peliculasComediaId = document.getElementById('peliculasComedia');
+
+const MostrarpeliculasComedia = () => {
+    const peliculasComedia = peliculaPublicada.filter((pelicula) => {
+        return pelicula.categoria === "Comedia"
+    });
+    peliculasComedia.map((pelicula) => {
+        peliculasComediaId.innerHTML += `
+        <div class="col-4 col-md-2">
+            <img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}">
+        </div>
+        `
+    })
+}
+MostrarpeliculasComedia();
+
+let peliculasCSFId = document.getElementById('peliculasCienciaFiccion');
+
+const MostrarpeliculasCSF = () => {
+    const peliculasCSF = peliculaPublicada.filter((pelicula) => {
+        return pelicula.categoria === "Ciencia Ficción"
+    });
+    peliculasCSF.map((pelicula) => {
+        peliculasCSFId.innerHTML += `
+        <div class="col-4 col-md-2">
+            <img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}">
+        </div>
+        `
+    })
+}
+MostrarpeliculasCSF();
+
+let peliculasTerrorId = document.getElementById('peliculasTerror');
+
+const MostrarpeliculasTerror = () => {
+    const peliculasTerror = peliculaPublicada.filter((pelicula) => {
+        return pelicula.categoria === "Terror"
+    });
+    peliculasTerror.map((pelicula) => {
+        peliculasTerrorId.innerHTML += `
+        <div class="col-4 col-md-2">
+            <img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}">
+        </div>
+        `
+    })
+}
+MostrarpeliculasTerror();
+
+let peliculasAventuraId = document.getElementById('peliculasAventura');
+
+const MostrarpeliculasAventura = () => {
+    const peliculasAventura = peliculaPublicada.filter((pelicula) => {
+        return pelicula.categoria === "Aventura"
+    });
+    peliculasAventura.map((pelicula) => {
+        peliculasAventuraId.innerHTML += `
+        <div class="col-4 col-md-2">
+            <img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}">
+        </div>
+        `
+    })
+}
+MostrarpeliculasAventura();
+
+let peliculasRomanceId = document.getElementById('peliculasRomanticas');
+
+const MostrarpeliculasRomance = () => {
+    const peliculasRomance = peliculaPublicada.filter((pelicula) => {
+        return pelicula.categoria === "Romance"
+    });
+    peliculasRomance.map((pelicula) => {
+        peliculasRomanceId.innerHTML += `
+        <div class="col-4 col-md-2">
+            <img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}">
+        </div>
+        `
+    })
+}
+MostrarpeliculasRomance();
+
+let documentalesId = document.getElementById('documentales');
+
+const Mostrardocumentales = () => {
+    const documentales = peliculaPublicada.filter((documental) => {
+        return documental.categoria === "Documentales"
+    });
+    documentales.map((documental) => {
+        documentalesId.innerHTML += `
+        <div class="col-4 col-md-2">
+            <img class="img-categorias my-3" src="${documental.imagen}" alt="${documental.nombre}">
+        </div>
+        `
+    })
+}
+Mostrardocumentales();
+
+let peliculasDCId = document.getElementById('peliculasDC');
+
+const MostrarpeliculasDC = () => {
+    const peliculasDC = peliculaPublicada.filter((pelicula) => {
+        return pelicula.categoria === "DC"
+    });
+    peliculasDC.map((pelicula) => {
+        peliculasDCId.innerHTML += `
+        <div class="col-4 col-md-2">
+            <img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}">
+        </div>
+        `
+    })
+}
+MostrarpeliculasDC();
+
+
+
+
+
 
 
 
