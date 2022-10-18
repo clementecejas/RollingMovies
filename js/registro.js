@@ -91,7 +91,6 @@ formSignUp.addEventListener("submit", (e) => {
         showConfirmButton: false,
         timer: 1500,
     });
-    setTimeout(() => {
-        window.location.href="login.html"
-      }, 2300);
+    // redireccionar a la pagina principal o a la pagina que deseamos que redireccione al loguearse correctamente
+    // window.location.href = "./login.html";
 });

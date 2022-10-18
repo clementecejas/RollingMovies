@@ -45,7 +45,4 @@ formLogin.addEventListener("submit", (e) => {
     showConfirmButton: false,
     timer: 1500,
   });
-  setTimeout(() => {
-    window.location.href="../index.html"
-  }, 2300);
 });
