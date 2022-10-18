@@ -33,7 +33,7 @@ const primeraDestacada = () => {
         ${primeraPeliculaFiltrada.descripcion}
     </p>
     <a class="boton" href="${primeraPeliculaFiltrada.trailer}" target="_blank"><i class="fas fa-play"></i>Reproducir</a>
-    <button role="button" class="boton"><i class="fas fa-info-circle"></i>Más información</button>
+    <button role="button" class="boton" onclick="traerPelicula(${primeraPeliculaFiltrada.id})"><i class="fas fa-info-circle"></i>Más información</button>
     `
     peliculaPrincipal.style.backgroundImage = `url(${primeraPeliculaFiltrada.imagenPortada ? primeraPeliculaFiltrada.imagenPortada : primeraPeliculaFiltrada.imagen})`;
 }
