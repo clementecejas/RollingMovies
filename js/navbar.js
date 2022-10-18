@@ -22,9 +22,9 @@ const logout = () => {
     }, 1500);
 }
 
-//let url = 'http://127.0.0.1:5500'
+let url = 'http://127.0.0.1:5500'
 
-let url = 'https://elevenflix.netlify.app'
+//let url = 'https://elevenflix.netlify.app'
 
 navbarDinamica.innerHTML = `
     <div class="container-navbar">
