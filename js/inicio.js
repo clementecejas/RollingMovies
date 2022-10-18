@@ -4,6 +4,7 @@ let corruselDestacadas = document.getElementById('corruselDestacadas');
 let peliculaPrincipal = document.getElementById("pelicula-principal");
 
 let arrayDePeliculas = JSON.parse(localStorage.getItem("peliculas")) || [];
+console.log(arrayDePeliculas)
 
 //Traer todas las peliculas que estén publicadas - publicada === true
 const peliculaPublicada = arrayDePeliculas.filter((pelicula) => {
