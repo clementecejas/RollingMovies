@@ -38,7 +38,7 @@ const mostrarTodasLasDestacadas = () => {
     peliculasFiltradas.map((pelicula) =>{
         return corruselDestacadas.innerHTML += `
             <div class="pelicula">
-                <a onclick="traerPelicula(${pelicula.id})"><img src="${pelicula.imagen}" alt="${pelicula.nombre}"></a>
+                <a href=""><img src="${pelicula.imagen}" alt="${pelicula.nombre}"></a>
             </div>
         `
     });
