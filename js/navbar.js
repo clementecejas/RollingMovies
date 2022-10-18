@@ -20,7 +20,9 @@ const logout = () => {
     setTimeout(() => {
         location.reload();
     }, 1500);
-  }
+}
+
+let url = 'http://127.0.0.1:5501'
 
 navbarDinamica.innerHTML = `
     <div class="container-navbar">
@@ -37,16 +39,16 @@ navbarDinamica.innerHTML = `
                             <a class="nav-link" href="../index.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Contacto</a>
+                            <a class="nav-link" href="${location.href === url + '/index.html' ? "./html/contacto.html" : "./contacto.html"}">Contacto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="${isLogged ? "display:none;" : "display:block;"}" href="${location.href === 'http://127.0.0.1:5500/index.html' ? "./html/login.html" : "./login.html"}">Login</a>
+                            <a class="nav-link" style="${isLogged ? "display:none;" : "display:block;"}" href="${location.href === url + '/index.html' ? "./html/login.html" : "./login.html"}">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="${isAdmin ? "display:block;" : "display:none;"}" href="${location.href === 'http://127.0.0.1:5500/index.html' ? "./html/pagAdmin.html" : "./pagAdmin.html"}">Administrar Peliculas</a>
+                            <a class="nav-link" style="${isAdmin ? "display:block;" : "display:none;"}" href="${location.href === url + '/index.html' ? "./html/pagAdmin.html" : "./pagAdmin.html"}">Administrar Peliculas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-active" style="${isLogged ? "display:none;" : "display:block;"}" href="${location.href === 'http://127.0.0.1:5500/index.html' ? "./html/registro.html" : "./registro.html"}">Registrarse</a>
+                            <a class="nav-link nav-link-active" style="${isLogged ? "display:none;" : "display:block;"}" href="${location.href === url + '/index.html' ? "./html/registro.html" : "./registro.html"}">Registrarse</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link nav-link-active" role="button" style="${isLogged ? "display:block;" : "display:none;"}" onclick="logout()">Cerrar Sesión</a>
@@ -57,4 +59,6 @@ navbarDinamica.innerHTML = `
         </nav>
     </div>
     `
+
+
 

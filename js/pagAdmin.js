@@ -3,6 +3,7 @@ let nombreInput = document.getElementById('nombreInput');
 let descripcionInput = document.getElementById('descripcionInput');
 let categoriaInput = document.getElementById('categoriaInput');
 let imagenInput = document.getElementById('imagenInput');
+let imagenPortada = document.getElementById('imagenPortada')
 let trailerInput = document.getElementById('trailerInput');
 let agregar = document.getElementById('agregar');
 let msg = document.getElementById('msg');
@@ -63,11 +64,13 @@ const aceptarPelicula = () => {
         id: idRandom(),
         nombre: nombreInput.value,
         imagen: imagenInput.value,
+        imagenPortada: imagenPortada.value,
         trailer: trailerInput.value,
         descripcion: descripcionInput.value,
         categoria: categoriaInput.value,
         publicado: true,
-        favorito: false
+        favorito: false,
+        portada: false
     })
     localStorage.setItem('peliculas', JSON.stringify(peliculas));
     ponerPelicula();
@@ -88,6 +91,7 @@ const resetForm = () => {
     descripcionInput.value = "";
     categoriaInput.value = "";
     imagenInput.value = "";
+    imagenPortada.value = "";
     trailerInput.value = "";
 }
 
@@ -108,6 +112,9 @@ const ponerPelicula = () => {
                     <button type="button" class="btn"><i onclick="borrarPelicula(${pelicula.id})" class="bi bi-trash-fill btn-white"></i></button>
                     <button type="button" class="btn"><i onclick="marcarFavorito(${pelicula.id})" class="bi ${pelicula.favorito ? "bi-star-fill" : "bi-star"} btn-white"></i></button>
                 </td>
+                <td>
+                    <input type="checkbox" ${pelicula.portada ? "checked" : ""} class="form-check-input" id="portadaInput" onclick="estaEnPortada(${pelicula.id})">
+                </td>
             </tr>
         `
     })
@@ -123,6 +130,16 @@ const publicadoONo = (id) => {
         return pelicula.id === id
     });
     peliculaFiltrada.publicado = !peliculaFiltrada.publicado;
+    localStorage.setItem("peliculas", JSON.stringify(peliculas));
+    location.reload();
+}
+
+//Cambiar estado si está publicado o no.
+const estaEnPortada = (id) => {
+    const peliculaFiltrada = peliculas.find((pelicula) => {
+        return pelicula.id === id
+    });
+    peliculaFiltrada.portada = !peliculaFiltrada.portada;
     localStorage.setItem("peliculas", JSON.stringify(peliculas));
     location.reload();
 }
@@ -153,18 +170,12 @@ const editarPelicula = (id) => {
     descripcionInput.value = peliculaFiltrada.descripcion;
     categoriaInput.value = peliculaFiltrada.categoria;
     imagenInput.value = peliculaFiltrada.imagen;
+    imagenPortada.value = peliculaFiltrada.imagenPortada;
     trailerInput.value = peliculaFiltrada.trailer;
     const filter = peliculas.filter((pelicula) => {
         return pelicula.id !== id
     })
     peliculas = filter
     localStorage.setItem("peliculas", JSON.stringify(peliculas));
-
-    Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Pelicula EDITADA con éxito",
-        showConfirmButton: true,
-        timer: 1500,
-    });
 }
+
