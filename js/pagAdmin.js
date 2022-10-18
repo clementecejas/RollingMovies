@@ -91,6 +91,7 @@ const resetForm = () => {
     descripcionInput.value = "";
     categoriaInput.value = "";
     imagenInput.value = "";
+    imagenPortada.value = "";
     trailerInput.value = "";
 }
 
@@ -169,6 +170,7 @@ const editarPelicula = (id) => {
     descripcionInput.value = peliculaFiltrada.descripcion;
     categoriaInput.value = peliculaFiltrada.categoria;
     imagenInput.value = peliculaFiltrada.imagen;
+    imagenPortada.value = peliculaFiltrada.imagenPortada;
     trailerInput.value = peliculaFiltrada.trailer;
     const filter = peliculas.filter((pelicula) => {
         return pelicula.id !== id
@@ -176,3 +178,4 @@ const editarPelicula = (id) => {
     peliculas = filter
     localStorage.setItem("peliculas", JSON.stringify(peliculas));
 }
+
