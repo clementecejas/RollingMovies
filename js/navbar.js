@@ -22,8 +22,9 @@ const logout = () => {
     }, 1500);
 }
 
+//let url = 'http://127.0.0.1:5500'
 
-let url = 'http://127.0.0.1:5500'
+let url = 'https://elevenflix.netlify.app'
 
 navbarDinamica.innerHTML = `
     <div class="container-navbar">
@@ -63,18 +64,5 @@ navbarDinamica.innerHTML = `
         </nav>
     </div>
     `
-    const admin = () => {
-        const usuario = usuarios.find((usuario) => {
-            return usuario.email === "admin1@hotmail.com";
-        })
-        usuario.isAdmin = true;
-        usuario.isLogged = true;
-        localStorage.setItem("usuarioLogueado", JSON.stringify(usuario))
-        console.log(usuario)
-        // setTimeout(() => {
-        //   window.location.href="pagAdmin.html"
-        // }, 2300);
-    }
-    admin();
 
 
