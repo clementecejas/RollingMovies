@@ -13,7 +13,7 @@ const peliculaPublicada = arrayDePeliculas.filter((pelicula) => {
 //Traer la primera pelicula destacada y mostrarla
 const primeraDestacada = () => {
     const peliculasFiltrada = peliculaPublicada.filter((pelicula) => {
-        return pelicula.favorito;
+        return pelicula.portada;
     });
     const primeraPeliculaFiltrada = peliculasFiltrada[0];
     
@@ -25,7 +25,7 @@ const primeraDestacada = () => {
     <a class="boton" href="${primeraPeliculaFiltrada.trailer}" target="_blank"><i class="fas fa-play"></i>Reproducir</a>
     <button role="button" class="boton"><i class="fas fa-info-circle"></i>Más información</button>
     `
-    peliculaPrincipal.style.backgroundImage = `url(${primeraPeliculaFiltrada.imagen})`;
+    peliculaPrincipal.style.backgroundImage = `url(${primeraPeliculaFiltrada.imagenPortada ? primeraPeliculaFiltrada.imagenPortada : primeraPeliculaFiltrada.imagen})`;
 }
 primeraDestacada();
 
@@ -38,7 +38,7 @@ const mostrarTodasLasDestacadas = () => {
     peliculasFiltradas.map((pelicula) =>{
         return corruselDestacadas.innerHTML += `
             <div class="pelicula">
-                <a href="#"><img src="${pelicula.imagen}" alt="${pelicula.nombre}"></a>
+                <a onclick="traerPelicula(${pelicula.id})"><img src="${pelicula.imagen}" alt="${pelicula.nombre}"></a>
             </div>
         `
     });
@@ -48,8 +48,38 @@ mostrarTodasLasDestacadas();
 
 //Mostrar segun las categorias
 
-let categorias = ["Acción", "Aventura", "Comedia", "Ciencia Ficción", "Romance", "Comedia", "Series", "Terror"]
+const MostrarPeliculasDeAccion = () => {
+    const peliculasDeAccion = peliculaPublicada.filter((pelicula) => {
+        return pelicula.categoria === "Acción"
+    });
+    peliculasDeAccion.map((pelicula) => {
+        console.log(pelicula);
+    })
+}
+MostrarPeliculasDeAccion();
 
-categorias.map((categoria) => {
-    return categoria;
-});
+
+const MostrarPeliculasDeCSFiccion = () => {
+    const peliculasDeAccion = peliculaPublicada.filter((pelicula) => {
+        return pelicula.categoria === "Ciencia Ficción"
+    });
+    peliculasDeAccion.map((pelicula) => {
+        console.log(pelicula)
+    })
+}
+MostrarPeliculasDeCSFiccion();
+
+
+const MostrarSeries = () => {
+    const peliculasDeAccion = peliculaPublicada.filter((pelicula) => {
+        return pelicula.categoria === "Series"
+    });
+    peliculasDeAccion.map((pelicula) => {
+        console.log(pelicula)
+    })
+}
+MostrarSeries();
+
+
+
+

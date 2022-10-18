@@ -54,6 +54,7 @@
                         <th class="display" scope="col">Categoría</th>
                         <th class="display" scope="col">Publicado</th>
                         <th class="display" scope="col">Acciones</th>
+                        <th class="display" scope="col">Portada</th>
                     </tr>
                 </thead>
                 <tbody id="coleccion">
@@ -79,6 +80,10 @@
                             <input type="text" class="form-control" id="nombreInput">
                         </div>
                         <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">*Imagen de Portada (Colocar URL de la imagen desde Cloudinary)</label>
+                            <input type="text" class="form-control" id="imagenPortada">
+                        </div>
+                        <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">*Imagen (Colocar URL de la imagen desde Cloudinary)</label>
                             <input type="text" class="form-control" id="imagenInput">
                         </div>
@@ -98,6 +103,8 @@
                             <option value="Comedia">Comedia</option>
                             <option value="Terror">Terror</option>
                             <option value="Series">Series</option>
+                            <option value="Documentales">Documentales</option>
+                            <option value="Marvel">Marvel</option>
                         </select>
                         </div>
                         <div class="mb-3">

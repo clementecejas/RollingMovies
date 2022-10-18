@@ -230,6 +230,10 @@ header nav a.activo {
 		gap: 20px;
 	}
 
+	.peliculas-recomendadas .contenedor-carousel .carousel .pelicula img {
+		height: 200px;
+	}
+
 	.peliculas-recomendadas .indicadores,
 	.peliculas-recomendadas .flecha-izquierda,
 	.peliculas-recomendadas .flecha-derecha {
@@ -314,8 +318,3 @@ header nav a.activo {
 
 }
 
-
-	.peliculas-recomendadas .contenedor-carousel .carousel .pelicula img {
-		height: 200px;
-	}
-}

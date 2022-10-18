@@ -18,9 +18,9 @@ const logout = () => {
         });
     }
     setTimeout(() => {
-        location.reload();
+        location.href = `index.html`;
     }, 1500);
-  }
+}
 
 navbarDinamica.innerHTML = `
     <div class="container-navbar">
@@ -37,7 +37,7 @@ navbarDinamica.innerHTML = `
                             <a class="nav-link" href="../index.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Contacto</a>
+                            <a class="nav-link" href="${location.href === 'http://127.0.0.1:5500/index.html' ? "./html/contacto.html" : "./contacto.html"}">Contacto</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" style="${isLogged ? "display:none;" : "display:block;"}" href="${location.href === 'http://127.0.0.1:5500/index.html' ? "./html/login.html" : "./login.html"}">Login</a>
