@@ -224,6 +224,12 @@ header nav a.activo {
 
 .img-categorias{
 	width: 100%;
+	transition: all 0.7s ease-in-out;
+}
+
+.img-categorias:hover{
+	transform: scale(1.2);
+	transition: all 0.5s ease-in-out;
 }
 
 /* ---- ----- ----- Media Queries ----- ----- ----- */
