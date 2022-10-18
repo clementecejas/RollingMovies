@@ -9,5 +9,5 @@ const traerPelicula = (id) => {
     })
 
     console.log(peliculaFiltrada);
-    // location.href = "/html/detallePelicula.html";
+    //location.href = "/html/detallePelicula.html";
 }
