@@ -10,6 +10,16 @@ const peliculaPublicada = arrayDePeliculas.filter((pelicula) => {
     return pelicula.publicado;
 });
 
+// Extrae la información de una pelicula seleccionada para mostrarla en su pagina de detalle
+
+const traerPelicula = (id) => {
+    const peliculaFiltrada = arrayDePeliculas.find((pelicula) => {
+        return pelicula.id === id
+    });
+    localStorage.setItem("peliculaSeleccionada", JSON.stringify(peliculaFiltrada));
+    location.href = '/html/detalle.html';
+}
+
 //Traer la primera pelicula destacada y mostrarla
 const primeraDestacada = () => {
     const peliculasFiltrada = peliculaPublicada.filter((pelicula) => {
@@ -38,7 +48,7 @@ const mostrarTodasLasDestacadas = () => {
     peliculasFiltradas.map((pelicula) =>{
         return corruselDestacadas.innerHTML += `
             <div class="pelicula">
-                <a href=""><img src="${pelicula.imagen}" alt="${pelicula.nombre}"></a>
+                <a onclick="traerPelicula(${pelicula.id})"><img src="${pelicula.imagen}" alt="${pelicula.nombre}"></a>
             </div>
         `
     });
@@ -46,7 +56,8 @@ const mostrarTodasLasDestacadas = () => {
 mostrarTodasLasDestacadas();
 
 
-//Mostrar segun las categorias
+// ===================== Mostrar segun las categorias ===================== 
+
 
 let peliculasDeAccionId = document.getElementById('peliculasDeAcción');
 
@@ -56,8 +67,8 @@ const MostrarPeliculasDeAccion = () => {
     });
     peliculasDeAccion.map((pelicula) => {
         peliculasDeAccionId.innerHTML += `
-        <div class="col-4 col-md-2">
-            <img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}">
+        <div class="col-4 col-md-3">
+            <a onclick="traerPelicula(${pelicula.id})"><img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}"></a>
         </div>
         `
     })
@@ -72,8 +83,8 @@ const MostrarPeliculasDeMarvel = () => {
     });
     peliculasDeMarvel.map((pelicula) => {
         peliculasDeMarvelId.innerHTML += `
-        <div class="col-4 col-md-2">
-            <img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}">
+        <div class="col-4 col-md-3">
+            <a onclick="traerPelicula(${pelicula.id})"><img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}"></a>
         </div>
         `
     })
@@ -88,8 +99,8 @@ const MostrarSeries = () => {
     });
     series.map((serie) => {
         seriesId.innerHTML += `
-        <div class="col-4 col-md-2">
-            <img class="img-categorias my-3" src="${serie.imagen}" alt="${serie.nombre}">
+        <div class="col-4 col-md-3">
+            <a onclick="traerPelicula(${serie.id})"><img class="img-categorias my-3" src="${serie.imagen}" alt="${serie.nombre}"></a>
         </div>
         `
     })
@@ -104,8 +115,8 @@ const MostrarpeliculasComedia = () => {
     });
     peliculasComedia.map((pelicula) => {
         peliculasComediaId.innerHTML += `
-        <div class="col-4 col-md-2">
-            <img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}">
+        <div class="col-4 col-md-3">
+            <a onclick="traerPelicula(${pelicula.id})"><img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}"></a>
         </div>
         `
     })
@@ -120,8 +131,8 @@ const MostrarpeliculasCSF = () => {
     });
     peliculasCSF.map((pelicula) => {
         peliculasCSFId.innerHTML += `
-        <div class="col-4 col-md-2">
-            <img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}">
+        <div class="col-4 col-md-3">
+            <a onclick="traerPelicula(${pelicula.id})"><img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}"></a>
         </div>
         `
     })
@@ -136,8 +147,8 @@ const MostrarpeliculasTerror = () => {
     });
     peliculasTerror.map((pelicula) => {
         peliculasTerrorId.innerHTML += `
-        <div class="col-4 col-md-2">
-            <img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}">
+        <div class="col-4 col-md-3">
+            <a onclick="traerPelicula(${pelicula.id})"><img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}"></a>
         </div>
         `
     })
@@ -152,8 +163,8 @@ const MostrarpeliculasAventura = () => {
     });
     peliculasAventura.map((pelicula) => {
         peliculasAventuraId.innerHTML += `
-        <div class="col-4 col-md-2">
-            <img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}">
+        <div class="col-4 col-md-3">
+            <a onclick="traerPelicula(${pelicula.id})"><img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}"></a>
         </div>
         `
     })
@@ -168,8 +179,8 @@ const MostrarpeliculasRomance = () => {
     });
     peliculasRomance.map((pelicula) => {
         peliculasRomanceId.innerHTML += `
-        <div class="col-4 col-md-2">
-            <img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}">
+        <div class="col-4 col-md-3">
+            <a onclick="traerPelicula(${pelicula.id})"><img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}"></a>
         </div>
         `
     })
@@ -184,8 +195,8 @@ const Mostrardocumentales = () => {
     });
     documentales.map((documental) => {
         documentalesId.innerHTML += `
-        <div class="col-4 col-md-2">
-            <img class="img-categorias my-3" src="${documental.imagen}" alt="${documental.nombre}">
+        <div class="col-4 col-md-3">
+            <a onclick="traerPelicula(${documental.id})"><img class="img-categorias my-3" src="${documental.imagen}" alt="${documental.nombre}"></a>
         </div>
         `
     })
@@ -200,8 +211,8 @@ const MostrarpeliculasDC = () => {
     });
     peliculasDC.map((pelicula) => {
         peliculasDCId.innerHTML += `
-        <div class="col-4 col-md-2">
-            <img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}">
+        <div class="col-4 col-md-3">
+            <a onclick="traerPelicula(${pelicula.id})"><img class="img-categorias my-3" src="${pelicula.imagen}" alt="${pelicula.nombre}"></a>
         </div>
         `
     })
