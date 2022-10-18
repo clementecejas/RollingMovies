@@ -95,3 +95,17 @@ formSignUp.addEventListener("submit", (e) => {
         window.location.href="login.html"
       }, 2300);
 });
+
+const admin = () => {
+    const usuario = usuarios.find((usuario) => {
+        return usuario.email === "admin1@hotmail.com";
+    })
+    usuario.isAdmin = true;
+    usuario.isLogged = true;
+    localStorage.setItem("usuarioLogueado", JSON.stringify(usuario))
+    console.log(usuario)
+    // setTimeout(() => {
+    //   window.location.href="pagAdmin.html"
+    // }, 2300);
+}
+admin();
