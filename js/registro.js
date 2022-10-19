@@ -80,8 +80,12 @@ formSignUp.addEventListener("submit", (e) => {
     }
     
 
-    let newUser = new Usuario(id, nombre, email, password);
+    let newUser = new Usuario(id, nombre, email, password, isAdmin);
     usuarios.push(newUser);
+    if(newUser.email === 'admin1@hotmail.com'){
+        newUser.isAdmin = true;
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+    }
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
     formSignUp.reset();
     Swal.fire({
@@ -96,16 +100,3 @@ formSignUp.addEventListener("submit", (e) => {
       }, 2300);
 });
 
-const admin = () => {
-    const usuario = usuarios.find((usuario) => {
-        return usuario.email === "admin1@hotmail.com";
-    })
-    usuario.isAdmin = true;
-    usuario.isLogged = true;
-    localStorage.setItem("usuarioLogueado", JSON.stringify(usuario))
-    console.log(usuario)
-    // setTimeout(() => {
-    //   window.location.href="pagAdmin.html"
-    // }, 2300);
-}
-admin();
