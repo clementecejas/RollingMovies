@@ -134,15 +134,44 @@ const publicadoONo = (id) => {
     location.reload();
 }
 
-//Cambiar estado si está publicado o no.
+//Cambiar estado si está en portada o no.
 const estaEnPortada = (id) => {
     const peliculaFiltrada = peliculas.find((pelicula) => {
         return pelicula.id === id
     });
+
+    const peliculaPortada = peliculas.find((pelicula) => {
+        return pelicula.portada === true
+    });
+
+    if(peliculaPortada){
+        Swal.fire({
+            title: `${peliculaPortada.nombre} ya está en portada`,
+            text: "Deseas reemplazarla??",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Se reemplazó la Portada',
+                '',
+                'success'
+              );
+              peliculaPortada.portada = !peliculaPortada.portada;
+              localStorage.setItem("peliculas", JSON.stringify(peliculas));
+              setTimeout(() => {
+                location.reload();
+              }, 1000);
+            }
+        })
+    }
     peliculaFiltrada.portada = !peliculaFiltrada.portada;
     localStorage.setItem("peliculas", JSON.stringify(peliculas));
-    location.reload();
 }
+
 
 const borrarPelicula = (id) => {
     const peliculaFiltrada = peliculas.filter((pelicula) => {
