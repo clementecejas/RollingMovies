@@ -98,3 +98,9 @@
 .container-modal-suscrip .form-check a {
     text-decoration: none;
 }
+
+iframe{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}

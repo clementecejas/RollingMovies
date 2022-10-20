@@ -18,7 +18,7 @@ const logout = () => {
         });
     }
     setTimeout(() => {
-        location.reload();
+        location.href = '/index.html';
     }, 1500);
 }
 
