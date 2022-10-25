@@ -15,9 +15,9 @@ let peliculas = JSON.parse(localStorage.getItem("peliculas")) || [];
 
 function idRandom() {
     if (peliculas.length > 0) {
-        return peliculas[peliculas.length - 1].id + Math.round(Math.random() * 100);
+        return peliculas[peliculas.length - 1].id + Math.round(Math.random() * 10000);
     } else {
-        return Math.round(Math.random() * 100);
+        return Math.round(Math.random() * 10000);
     }
 }
 

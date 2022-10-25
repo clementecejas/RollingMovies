@@ -1,16 +1,16 @@
 let peliculas2 = JSON.parse(localStorage.getItem("peliculas")) || [];
 
 function idRandom() {
-    if (peliculas.length > 0) {
-        return peliculas[peliculas.length - 1].id + Math.round(Math.random() * 100);
+    if (peliculas2.length > 0) {
+        return peliculas2[peliculas.length - 1].id + Math.round(Math.random() * 10000);
     } else {
-        return Math.round(Math.random() * 100);
+        return Math.round(Math.random() * 10000);
     }
 }
 
 let peliculasPorDefecto = [
     {
-        id: 1,
+        id: idRandom(),
         nombre: 'Daredevil',
         imagen: 'https://pbs.twimg.com/media/FWgU1ZTUIAIGOmH.jpg:large',
         imagenPortada: 'https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/51549B21334AB3968E620AB93B4F20F3D18D43E0C3B0655C775BA61819650A81/scale?width=1200&aspectRatio=1.78&format=jpeg',
@@ -22,7 +22,7 @@ let peliculasPorDefecto = [
         portada: false
     },
     {
-        id: 2,
+        id: idRandom(),
         nombre: 'Capitan America Civil War',
         imagen: 'https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/170636/170636.jpg',
         imagenPortada: 'https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/D6D8F1C5A690E3CFE951AE58D7E8581EA27AD92759B19CBCF0D26914E66D112C/scale?width=1200&aspectRatio=1.78&format=jpeg',
@@ -34,7 +34,7 @@ let peliculasPorDefecto = [
         portada: false
     },
     {
-        id: 3,
+        id: idRandom(),
         nombre: 'Capitan America y el soldado del Invierno',
         imagen: 'https://es.web.img3.acsta.net/pictures/14/01/31/16/12/220933.jpg',
         imagenPortada: 'https://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/24537.jpg',
@@ -46,7 +46,7 @@ let peliculasPorDefecto = [
         portada: true
     },
     {
-        id: 4,
+        id: idRandom(),
         nombre: 'Capitan America el Primer Vengador',
         imagen: 'https://es.web.img3.acsta.net/medias/nmedia/18/84/79/82/20099009.jpg',
         imagenPortada: 'https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C1BF743FA5C68171968E444AEB4FDD84BFFC6A7E9ADC8EC0A427DE7E80D62C04/scale?width=1200&aspectRatio=1.78&format=jpeg',
@@ -58,7 +58,7 @@ let peliculasPorDefecto = [
         portada: false
     },
     {
-        id: 5,
+        id: idRandom(),
         nombre: 'Iron Man 3',
         imagen: 'https://pics.filmaffinity.com/Iron_Man_3-473505612-large.jpg',
         imagenPortada: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/ironman-3-1556537437.jpeg',
@@ -70,7 +70,7 @@ let peliculasPorDefecto = [
         portada: false
     },
     {
-        id: 6,
+        id: idRandom(),
         nombre: 'Iron Man',
         imagen: 'https://pics.filmaffinity.com/Iron_Man-108960873-large.jpg',
         imagenPortada: 'https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/7F51FA9F6CBD9F0C9B1394B1CC0A6A842D07091318674E234CD33CBF7C28CDC3/scale?width=1200&aspectRatio=1.78&format=jpeg',
@@ -82,7 +82,7 @@ let peliculasPorDefecto = [
         portada: false
     },
     {
-        id: 7,
+        id: idRandom(),
         nombre: 'Avengers Infinity War',
         imagen: 'https://lumiere-a.akamaihd.net/v1/images/image_91864e3f.jpeg',
         imagenPortada: 'https://newspack-hipertextual.s3.amazonaws.com/wp-content/uploads/2018/04/avengers_infinity_war_joe_anthony_russo.jpg',
@@ -94,7 +94,7 @@ let peliculasPorDefecto = [
         portada: false
     },
     {
-        id: 8,
+        id: idRandom(),
         nombre: 'Avengers Endgame',
         imagen: 'https://imageio.forbes.com/blogs-images/markhughes/files/2019/04/AVENGERS-ENDGAME-poster-DOLBY-CINEMA.jpg?format=jpg&width=960',
         imagenPortada: 'https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/A4B58B11C7019B5403E07D551249121C4F4CC99119907F4460F0725B34A27086/scale?width=1200&aspectRatio=1.78&format=jpeg',
@@ -106,7 +106,7 @@ let peliculasPorDefecto = [
         portada: false
     },
     {
-        id: 9,
+        id: idRandom(),
         nombre: 'Spider Man No Way Home',
         imagen: 'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/HTFXQHQKW5AZFOJEVTQSEQALIA.png',
         imagenPortada: 'https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2022/01/spider-man-no-way-home.jpeg?fit=2048%2C1087&quality=50&strip=all&ssl=1',
@@ -118,7 +118,7 @@ let peliculasPorDefecto = [
         portada: false
     },
     {
-        id: 10,
+        id: idRandom(),
         nombre: 'Doctor Strange en el Multiverso de la locura',
         imagen: 'https://es.web.img3.acsta.net/pictures/22/04/07/11/43/1839314.jpg',
         imagenPortada: 'https://as01.epimg.net/meristation/imagenes/2022/05/04/reportajes/1651689635_866482_1651736910_noticia_normal.jpg',
@@ -130,7 +130,7 @@ let peliculasPorDefecto = [
         portada: false
     },
     {
-        id: 11,
+        id: idRandom(),
         nombre: 'Black Panther: Wakanda for Ever',
         imagen: 'https://m.supergeek.cl/noticias/site/artic/20220726/imag/foto_0000000320220726124058/WAKANDAFOREVER_POSTER.jpg',
         imagenPortada: 'https://notifarandula.club/wp-content/uploads/2022/10/Lanzamiento-del-trailer-de-Black-Panther-Wakanda-Forever.jpg',
@@ -142,7 +142,7 @@ let peliculasPorDefecto = [
         portada: false
     },
     {
-        id: 12,
+        id: idRandom(),
         nombre: 'Eternals',
         imagen: 'https://lumiere-a.akamaihd.net/v1/images/eternals_ka_pay1_las_mi_affe3bf6.png',
         imagenPortada: 'https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/FB95B246902D39FDB268C138975F2EEE6F3E6616A7A760033262695B2D216942/scale?width=1200&aspectRatio=1.78&format=jpeg',
@@ -282,7 +282,7 @@ let peliculasPorDefecto = [
         id: idRandom(),
         nombre: 'Loki',
         imagen: 'https://pics.filmaffinity.com/Loki_Serie_de_TV-814995520-large.jpg',
-        imagenPortada: 'https://static.wikia.nocookie.net/marveldatabase/images/a/ae/Loki_%28TV_series%29_Season_1_5.jpg/revision/latest?cb=20210707090821',
+        imagenPortada: 'https://cloudfront-us-east-1.images.arcpublishing.com/gruporepublica/3OQ3JVQTIVF4HNQZSK7UFWUUCI.jpg',
         trailer: '<iframe width="1268" height="713" src="https://www.youtube.com/embed/YBLOatn1sps" title="Loki (2021) Marvel Serie Tráiler Oficial Subtitulado" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
         descripcion: 'Loki, el Dios de las Mentiras, se aleja de la sombra de su hermano para embarcarse en una aventura que se desarrolla tras los acontecimientos de "Vengadores: Endgame".',
         categoria: 'Series',
