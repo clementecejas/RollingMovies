@@ -821,30 +821,9 @@ let peliculasPorDefecto = [
 ];
 
 function setPeliculasDefecto() {
-    if(peliculas2.length  === 0){
+    if(peliculas2.length  < 10){
         localStorage.setItem('peliculas', JSON.stringify(peliculasPorDefecto));
-        Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Agregaste peliculas por defecto!",
-            showConfirmButton: true,
-            timer: 1500,
-        });
-        setTimeout(() => {
-            location.reload()
-        }, 1500);
-    }else{
-        Swal.fire({
-            position: "center",
-            icon: "warning",
-            title: "Ya agregaste las peliculas por defecto",
-            showConfirmButton: true,
-            timer: 1500,
-        });
+        location.reload();
     }
 };
 
-if(peliculas2.length > 0){
-    const botonAgregar = document.getElementById('boton-agregar');
-    botonAgregar.style.display = 'none'
-}
