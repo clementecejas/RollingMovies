@@ -18,24 +18,9 @@ const logout = () => {
         });
     }
     setTimeout(() => {
-        location.reload();
+        location.href = '/index.html';
     }, 1500);
 }
-
-
-const admin = () => {
-    const usuario = usuarios.find((usuario) => {
-      return usuario.email === "admin1@hotmail.com";
-    })
-    usuario.isAdmin = true;
-    usuario.isLogged = true;
-    localStorage.setItem("usuarioLogueado", JSON.stringify(usuario))
-    console.log(usuario)
-    // setTimeout(() => {
-    //   window.location.href="pagAdmin.html"
-    // }, 2300);
-  }
-  admin()
 
 navbarDinamica.innerHTML = `
     <div class="container-navbar">
@@ -52,16 +37,19 @@ navbarDinamica.innerHTML = `
                             <a class="nav-link" href="../index.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Contacto</a>
+                            <a class="nav-link" href="/html/acerNos.html">Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="${isLogged ? "display:none;" : "display:block;"}" href="${location.href === 'http://127.0.0.1:5500/index.html' ? "./html/login.html" : "./login.html"}">Login</a>
+                            <a class="nav-link" href="/html/contacto.html">Contacto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="${isAdmin ? "display:block;" : "display:none;"}" href="${location.href === 'http://127.0.0.1:5500/index.html' ? "./html/pagAdmin.html" : "./pagAdmin.html"}">Administrar Peliculas</a>
+                            <a class="nav-link" style="${isLogged ? "display:none;" : "display:block;"}" href="/html/login.html">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-active" style="${isLogged ? "display:none;" : "display:block;"}" href="${location.href === 'http://127.0.0.1:5500/index.html' ? "./html/registro.html" : "./registro.html"}">Registrarse</a>
+                            <a class="nav-link" style="${isAdmin ? "display:block;" : "display:none;"}" href="/html/pagAdmin.html">Administrar Peliculas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-active" style="${isLogged ? "display:none;" : "display:block;"}" href="/html/registro.html">Registrarse</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link nav-link-active" role="button" style="${isLogged ? "display:block;" : "display:none;"}" onclick="logout()">Cerrar Sesión</a>
@@ -72,4 +60,5 @@ navbarDinamica.innerHTML = `
         </nav>
     </div>
     `
+
 

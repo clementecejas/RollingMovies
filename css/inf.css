@@ -1,0 +1,114 @@
+.body-infinity {
+    font-family: 'Roboto', sans-serif;
+    background-image: url(https://res.cloudinary.com/dryiawgds/image/upload/v1665633473/fondoPelisc_cseeco.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.descrip-inf {
+    color: white;
+    text-align: center;
+    margin: 50px;
+}
+.descrip-inf hr {
+    color: white;
+    margin: 50px auto;
+    max-width: 1200px;
+}
+.container-pag-inf {
+    width: 100%;
+    max-width: 1100px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.box1-pag-inf {
+    width: 50%;
+}
+.box1-pag-inf img {
+    width: 100%;
+    border-radius: 10px;
+}
+.box2-pag-inf {
+    width: 50%;
+    text-align: center;
+}
+.box2-pag-inf h2 {
+    color: white;
+    margin-bottom: 35px;
+}
+.box2-pag-inf p {
+    color: white;
+    margin: 35px 25px;
+    padding: 10px;
+    font-size: 22px;
+}
+/* INICIO MEDIA QUERY IMG-RESUMEN */
+
+@media (max-width:910px) {
+
+    .container-pag-inf {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .box2-pag-inf {
+        width: 100%;
+    }
+    .box2-pag-inf h2 {
+        margin: 20px 0px;
+    }
+    .box2-pag-inf p {
+        margin: 35px 35px;
+        padding: 10px;
+        font-size: 20px;
+    }
+}
+@media (max-width:510px) {
+
+    .box2-pag-inf h2 {
+        margin: 20px 0px;
+    }
+    .box2-pag-inf p {
+        margin: 35px 20px;
+        padding: 5px;
+        font-size: 18px;
+    }
+
+    .descrip-inf{
+        margin-top: -20px;
+    }
+
+    iframe{
+        height: 100%;
+    }
+}
+
+
+
+/* FIN MEDIA QUERY IMG-RESUMEN */
+
+
+
+/* Trailer INFINITY WAR */
+.container-trailer-inf {
+    max-width: 1100px;
+    margin: 20px auto;
+}
+.container-trailer-inf iframe {
+    border-radius: 10px;
+}
+
+.container-modal-suscrip .form-check a {
+    text-decoration: none;
+}
+
+iframe{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
