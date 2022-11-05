@@ -4,7 +4,6 @@ let corruselDestacadas = document.getElementById('corruselDestacadas');
 let peliculaPrincipal = document.getElementById("pelicula-principal");
 
 let arrayDePeliculas = JSON.parse(localStorage.getItem("peliculas")) || [];
-console.log(arrayDePeliculas)
 
 //Traer todas las peliculas que estén publicadas - publicada === true
 const peliculaPublicada = arrayDePeliculas.filter((pelicula) => {
@@ -33,7 +32,7 @@ const primeraDestacada = () => {
     <p class="descripcion">
         ${primeraPeliculaFiltrada.descripcion}
     </p>
-    <a class="boton" href="${primeraPeliculaFiltrada.trailer}" target="_blank"><i class="fas fa-play"></i>Reproducir</a>
+    <a class="boton" href="" target="_blank"><i class="fas fa-play"></i>Reproducir</a>
     <button role="button" class="boton" onclick="traerPelicula(${primeraPeliculaFiltrada.id})"><i class="fas fa-info-circle"></i>Más información</button>
     `
     peliculaPrincipal.style.backgroundImage = `url(${primeraPeliculaFiltrada.imagenPortada ? primeraPeliculaFiltrada.imagenPortada : primeraPeliculaFiltrada.imagen})`;

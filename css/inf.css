@@ -78,6 +78,14 @@
         padding: 5px;
         font-size: 18px;
     }
+
+    .descrip-inf{
+        margin-top: -20px;
+    }
+
+    iframe{
+        height: 100%;
+    }
 }
 
 
@@ -97,4 +105,10 @@
 
 .container-modal-suscrip .form-check a {
     text-decoration: none;
+}
+
+iframe{
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }

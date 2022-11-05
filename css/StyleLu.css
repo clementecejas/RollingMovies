@@ -69,6 +69,7 @@ header nav a.activo {
 	font-weight: 600;
 	font-size: 3.12em;
 	margin-bottom: 0.4em;
+	text-shadow: 3px 5px 3px rgba(0,0,0,0.53);
 }
 
 .pelicula-principal .descripcion {
@@ -77,6 +78,7 @@ header nav a.activo {
 	line-height: 1.75em;
 	max-width: 50%;
 	margin-bottom: 1.25em;
+	text-shadow: 3px 5px 3px rgba(0,0,0,0.53);
 }
 
 .pelicula-principal .boton {
@@ -348,5 +350,13 @@ header nav a.activo {
     margin-left: 110px;
     margin-right: 0px;
 
+}
+
+.line{
+	background-color: #E50914;
+	width: 60%;
+	height: 10px;
+	margin-top: 15px;
+	margin-left: 30px;
 }
 
