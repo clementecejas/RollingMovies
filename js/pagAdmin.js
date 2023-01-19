@@ -13,12 +13,24 @@ let numeroPeliculas = document.querySelector('.numero-peliculas');
 
 let peliculas = JSON.parse(localStorage.getItem("peliculas")) || [];
 
+let ids = new Set();
+
 function idRandom() {
+    let id = 0;
     if (peliculas.length > 0) {
-        return peliculas[peliculas.length - 1].id + Math.round(Math.random() * 10000);
+        id = peliculas[peliculas.length - 1].id + Math.round(Math.random() * 10000);
     } else {
-        return Math.round(Math.random() * 10000);
+        id = Math.round(Math.random() * 10000);
     }
+    while (ids.has(id)) {
+        if (peliculas.length > 0) {
+            id = peliculas[peliculas.length - 1].id + Math.round(Math.random() * 10000);
+        } else {
+            id = Math.round(Math.random() * 10000);
+        }
+    }
+    ids.add(id);
+    return id;
 }
 
 form.addEventListener("submit", (e) => {
